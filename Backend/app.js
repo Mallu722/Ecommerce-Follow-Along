@@ -1,14 +1,30 @@
 const express = require("express");
 const app = express();
+const user = require("./controller/userController");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const errorHandler = require("./middleware/error");
 
-if(process.env.NODE_EMV !== "PRODUCTION"){
-    require("dotenv").config({
-        path: "backend/config/.env",
-    })
+app.use(errorHandler);
+
+app.use(express.json()); // Built-in middleware for parsing JSON
+app.use(express.urlencoded({ extended: true }));
+
+// Use CORS middleware
+app.use(cors());
+
+app.use("/api/v2/user", user);
+
+if (process.env.NODE_ENV !== "PRODUCTION") {
+  require("dotenv").config({
+    path: "backend/config.env",
+  });
 }
 
-app.get('/', (req, res)=>{
-    return res.send("Welcome to backend");
-})
+app.get("/", (_req, res) => {
+  return res.send("Welcome to backend");
+});
 
 module.exports = app;
+
+//AvK2HJ5CO74se77C
