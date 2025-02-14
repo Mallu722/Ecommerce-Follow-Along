@@ -1,24 +1,21 @@
 import './App.css'
-// eslint-dis4able-next-line
-import {BrowserRouter , Routes, Route } from 'react-router-dom';
-import {LoginPage, Home} from './Routes/routes.js';
-import {SignupPage,CreateProduct} from './Routes/routes.js';
-
-
-
+import { BrowserRouter , Routes, Route } from "react-router-dom";
+import {LoginPage,SignupPage,Home,CreateProduct,MyProduct,Cart} from './Routes/routes.js';
 
 const App = () => {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Home />} />
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/signup" element={<SignupPage/>} />
-      <Route path='/product' element={<CreateProduct/>}/>
-
+        <Route path="/signup" element={<SignupPage/>}></Route>
+      <Route path="/home" element={<Home/>}></Route>
+      <Route path="/product" element={<CreateProduct/>}/>
+      <Route path="/product/:id" element={<CreateProduct/>}/>
+        <Route path="/myproduct" element={<MyProduct/>}/>
+        <Route path="/cart" element={<Cart/>}/>
     </Routes>
     </BrowserRouter>  
   )
-}  
+}
 
 export default App;
