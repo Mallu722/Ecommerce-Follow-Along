@@ -1,14 +1,15 @@
+const User = require("../model/user");
 const express = require("express");
 const path = require("path")
 const fs = require("fs");
-const User = require("../model/userModel");
+
 const router = express.Router();
 const {upload} = require("../middleware/multer");
 const ErrorHandler = require("../utils/ErrorHandler");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
-const jwt =require("jsonwebtoken");
-const sendMail = require("../utils/sendMail");
+const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+require("dotenv").config();
 
 // create user
 router.post("/create-user", upload.single("file"), catchAsyncErrors( async (req, res, next) => {
@@ -17,7 +18,7 @@ router.post("/create-user", upload.single("file"), catchAsyncErrors( async (req,
     const userEmail = await User.findOne({ email });
     if (userEmail) {
         if (req.file){
-            const filePath = path.join(__dirname , "../uploads"/req.file.filename) ;
+            const filePath = path.join(__dirname , "../uploads",req.file.filename) ;
             try{
                 fs.unlinkSync(filePath);
             }
@@ -25,7 +26,7 @@ router.post("/create-user", upload.single("file"), catchAsyncErrors( async (req,
                 console.log("Error removing file:",err);
                 return res.status(500).json({message:"Error removing file"});
             }
-
+    
         }
 
         return next(new ErrorHandler("User already exists", 400));
@@ -69,7 +70,7 @@ router.post("/login-user", catchAsyncErrors(async(req, res, next) =>{
     
     console.log("Passoword matched result:", isPasswordMatched );
 
-    console.log("At Auth-", password, "Hash:", user_authen.password );
+    console.log("At Auth- password", password, "Hash:", user_authen.password );
 
     if (!isPasswordMatched) {
         console.log("Password mismatch");
@@ -88,6 +89,4 @@ router.post("/login-user", catchAsyncErrors(async(req, res, next) =>{
 }))
 
 
-
-
-module.exports=router;
+module.exports = router;
