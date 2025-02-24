@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const errorHandler = require("./middleware/error");
 const product = require("./controller/product");
+const userController = require('./controller/user');
+
 app.use(errorHandler);
 
 // Built-in middleware for parsing JSON
