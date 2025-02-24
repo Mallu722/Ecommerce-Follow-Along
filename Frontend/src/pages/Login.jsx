@@ -5,7 +5,7 @@ import {AiOutlineEye, AiOutlineEyeInvisible} from "react-icons/ai";
 
 
 
-function Login() {
+function LoginPage() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -98,7 +98,7 @@ function Login() {
                       id="rememberMe"
                       className="mr-2"
                   />
-                  <label htmlFor="remember Me" className="text-sm text-gray-900">
+                  <label htmlFor="rememberMe" className="text-sm text-gray-900">
                     Remember me
                   </label>
                 </div>
@@ -121,4 +121,4 @@ function Login() {
 }
 
 
-export default Login;
+export default LoginPage;

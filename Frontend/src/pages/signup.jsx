@@ -3,7 +3,7 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { RxAvatar } from "react-icons/rx";
 import axios from "axios";
-import styles from "../Styles/style"; // Ensure this is correctly used
+import styles from "../Styles/style.js"; // Ensure this is correctly used
 
 const SignupPage = () => {
   const [email, setEmail] = useState("");
