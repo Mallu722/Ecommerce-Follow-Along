@@ -1,6 +1,6 @@
 import {useParams} from 'react-router-dom'
 import axios from 'axios'
-import Navbar from '../components/nav.jsx'
+import Navbar from '../Components/nav.jsx'
 import {IoIosAdd, IoIosRemove} from 'react-icons/io'
 import {useEffect, useState} from "react";
 const email="a@gmail.com"
@@ -46,7 +46,7 @@ export default function ProductDetails() {
 
     const addtocart=async ()=>{
         try{
-            const responce =await axios.post('http://localhost:8000/api/v2/product/cart',{
+            const response  = await axios.post('http://localhost:8000/api/v2/product/cart',{
                 userId: email,
                 productId:id,
                 quantity:quantity
