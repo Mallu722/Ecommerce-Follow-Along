@@ -608,3 +608,170 @@ By completing this milestone, you have:
 
 ## Conclusion
 This milestone helped in understanding how to create and integrate a backend API that stores user addresses in the database. The knowledge gained will be useful for handling user profiles dynamically in future projects.
+
+# Milestone 23: Place Order & Select Address
+
+## Learning Goals 🎯
+By the end of this milestone, you will:
+- Add a "Place Order" button inside the cart.
+- Create a "Select Address" page displaying all available addresses for selection.
+- Implement a Mongoose schema for storing order details.
+- Develop a backend endpoint to fetch all user addresses.
+
+## Implementation Steps 📝
+### Frontend:
+1. **Add "Place Order" Button:**
+   - Implement a button inside the cart page that redirects users to the "Select Address" page.
+   
+2. **Create "Select Address" Page:**
+   - Display all saved addresses of the user.
+   - Provide an option to select one address for delivery.
+
+### Backend:
+1. **Create an Endpoint to Fetch User Addresses:**
+   - Implement a route that retrieves all stored addresses for a user.
+
+2. **Write Mongoose Order Schema:**
+   - Store essential order details, including selected address, products, total price, and user ID.
+
+## Expected Outcome 📌
+- Users can navigate from the cart to the "Select Address" page.
+- Users can choose an address before placing an order.
+- The backend successfully retrieves stored addresses and saves order details.
+
+This milestone enhances the e-commerce experience by allowing users to finalize their delivery details efficiently.
+
+
+## **Milestone 24: Order Confirmation Page** ##
+
+### **Welcome to Milestone 24!** 🌟
+
+In this milestone, we created an order confirmation page in the frontend where we display the ordered products, selected address, and total price details.
+
+### **Learning Goals** 🎯
+By the end of this milestone, we have:
+- Created an order confirmation page.
+- Displayed ordered products dynamically.
+- Implemented address selection and display.
+- Calculated and showed the total cart value.
+- Implemented a "Place Order" button to complete the order process.
+
+### **Steps for Milestone 24** 📝
+1. Displayed all the products the user is ordering.
+2. Showed the selected delivery address.
+3. Displayed the total value of the cart.
+4. Added a "Place Order" button at the bottom to confirm the order.
+
+### **Completion Note:**
+The order confirmation page has been successfully implemented, providing users with a clear overview of their order details before placing it.
+
+
+# Milestone 25: Place Order Endpoint
+
+## 🚀 Introduction
+Welcome to Milestone 25! In this milestone, we have implemented a backend endpoint that allows users to place orders. This functionality ensures that each product in the order is processed separately while sharing the same address details.
+
+## 🎯 Learning Goals
+By completing this milestone, you will:
+- Develop a backend endpoint for placing an order.
+- Retrieve user details using their email.
+- Store order details in the MongoDB `orders` collection using the predefined schema.
+
+## 📝 Implementation Steps
+1. **Create the Order Endpoint**: Develop an API endpoint that accepts user details, address, and product information.
+2. **Retrieve User ID**: Extract the user's email from the request and use it to find the corresponding `_id` from the `users` collection.
+3. **Process Each Product Separately**: For every product in the request, create a separate order while maintaining the same address.
+4. **Store Orders in MongoDB**: Use the existing `Order` schema to save order details in the `orders` collection.
+
+
+
+Here’s an improved version of your README update with better clarity and grammar:  
+
+---
+
+# 🏆 Milestone 26: Create Backend Endpoint for Placing Orders  
+
+Hey Kalvians! 👋  
+
+Welcome to **Milestone 26**! 🌟  
+
+## 🎯 Learning Goals  
+By the end of this milestone, you will:  
+
+✅ Create a backend endpoint to retrieve all orders of a user.  
+
+## 📝 Steps for Milestone 26  
+1. Create an endpoint that receives the user's email.  
+2. Use the email to retrieve the `_id` of the user from the database.  
+3. Fetch all orders associated with that `_id`.  
+4. Send the retrieved orders as a response.  
+
+This lesson will help you understand how to fetch all orders for a specific user in your backend.  
+
+
+## **Milestone 27: Implementing the My Orders Page for Seamless Order Tracking** ##
+📦 My Orders Page
+
+🌟 Overview
+
+The My Orders page allows users to view all their past and ongoing orders in one place. This page fetches order details from the backend and displays them in an organized manner.
+
+✨ Features
+
+🔄 Fetch and display all user orders by making a GET request to the /my-orders endpoint.
+
+📧 Orders are retrieved based on the user's email.
+
+📋 Orders are presented in a user-friendly format.
+
+🏠 Integrated into the navigation bar for easy access.
+
+
+📝 Implementation Steps
+
+🖥 Create the My Orders Page
+
+Develop a React component to display user orders.
+
+📡 Fetch User Orders
+
+Send a GET request to the /my-orders endpoint.
+
+Pass the user’s email to retrieve their orders.
+
+📑 Display Orders
+
+Format and show the fetched data in a structured layout.
+
+🔗 Add Page to Navbar
+
+Ensure smooth navigation by linking the My Orders page in the navbar.
+
+
+## **Milestone 28: ❌ Cancel Order Feature** ##
+
+## 🌟 Overview
+The **Cancel Order** feature allows users to cancel their placed orders. This involves updating both the frontend and backend to support order cancellation.
+
+## ✨ Features
+- 🛑 Add a **Cancel Order** button next to each active order on the **My Orders** page.
+- 🚫 The cancel button will be hidden for orders that are already canceled.
+- 🔄 Create a **backend endpoint** to handle order cancellation.
+- ✅ Update the order status to **"Canceled"** in the database.
+
+
+## 📝 Implementation Steps
+1. **🖥 Update My Orders Page**
+   - Add a **Cancel Order** button next to each order.
+   - Hide the button for orders that are already canceled.
+2. **🔧 Create Cancel Order Endpoint**
+   - Develop a new **POST** endpoint: `/cancel-order`.
+   - Receive `orderId` in the request payload.
+   - Fetch the order using this ID, update its status to "Canceled," and save it.
+3. **🔄 Integrate API with Frontend**
+   - On clicking the **Cancel Order** button, send a request to the backend.
+   - Update the UI to reflect the canceled order status.
+
+
+## 🎯 Conclusion
+This milestone enhances the **My Orders** page by allowing users to cancel their orders when needed. It helps in understanding how to modify order statuses and manage data updates dynamically.
