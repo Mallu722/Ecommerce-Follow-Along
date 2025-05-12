@@ -988,12 +988,9 @@ This milestone focuses on securing your application by validating the JWT tokens
 🧠 **Create JWT Middleware**  
 
 
-🚫 **Redirect Unauthorized Users**  
-If token verification fails, redirect the user to the login page or return a 401 Unauthorized response.
 
-🚀 **Next Steps**  
-With token validation in place, you’re now ready to implement full session management and user-specific pages with robust access control.
+## **Milestone 35:
+Backend Deployment Link: https://ecom-codealong.onrender.com/
 
----
-
+Frontend Deployment Link: https://ecom-code-along-55px.vercel.app/ 
 
